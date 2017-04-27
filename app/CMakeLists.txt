@@ -42,3 +42,8 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
+
+#加载(V4L2Camera 核心代码
+add_libary(V4L2Camera SHARED src/main/cpp/libv4l2-android-master/CameraHardware.cpp)
+target_link_libraries(native-lib ${log-lib} V4L2Camera)#native-lib里调用V4L2Camera
+
