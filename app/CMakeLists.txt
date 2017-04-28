@@ -17,7 +17,7 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/cpp/native-lib.cpp  libv4l2-android-master/v4l2/V4L2Camera.cpp)
+             src/main/cpp/native-lib.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -43,7 +43,5 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 
-#加载(V4L2Camera 核心代码
-add_libary(V4L2Camera SHARED src/main/cpp/libv4l2-android-master/CameraHardware.cpp)
-target_link_libraries(native-lib ${log-lib} V4L2Camera)#native-lib里调用V4L2Camera
+
 
